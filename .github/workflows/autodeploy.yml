@@ -1,7 +1,8 @@
 name: Auto Deploy # optional name of workflow; it will be shown in Github Actions tab
 on: # specify events on which the workflow shall be triggered
   push: # when push event occurs
-    branches: [master] # only when push event on master branch occurs
+    branches: 
+      - master # only when push event on master branch occurs
 jobs: # define jobs to run
   build-and-test: # name of the job; can be anything you like
     runs-on: ubuntu-latest # configures job to run on Ubuntu runner
@@ -12,10 +13,17 @@ jobs: # define jobs to run
         with:
           node-version: '12'
       - uses: actions/cache@v2 # This action allows caching dependencies and build outputs to improve workflow execution time.
+        env:
+          cache-name: cache-node-modules
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }} # An explicit key for restoring and saving the cache
-          restore-keys: ${{ runner.os }}-node- # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }} # An explicit key for restoring and saving the cache
+          # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-         
+          
       - run: npm ci # install project dependencies
       - run: npm run build --if-present # build the project
       ## - run: npm run test:unit # run the tests
