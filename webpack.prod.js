@@ -9,8 +9,10 @@ module.exports = {
   // If the src/index.js file imports other JS files,
   // bundle them as well
   entry: [
-      path.resolve(__dirname, './src/scripts/hello.js'),
-      path.resolve(__dirname, './src/index.js')
+      path.resolve(__dirname, './src/scripts/coins.js'),
+      path.resolve(__dirname, './src/scripts/common.js'),
+      path.resolve(__dirname, './src/scripts/favorites.js'),
+      path.resolve(__dirname, './src/scripts/style.js')
   ],
   // 2
   // The bundles source code files shall result in a bundle.js file
@@ -30,8 +32,18 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin,
     new HtmlWebpackPlugin({
-      title: "Basic Webpack Setup",
+      filename: "index.html",
       template: path.resolve(__dirname, './src/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: path.resolve(__dirname, './src/html/about.html'),
+      chunks: []
+    }),
+    new HtmlWebpackPlugin({
+      filename: "contact.html",
+      template: path.resolve(__dirname, './src/html/contact.html'),
+      chunks: []
     })
   ],
   module: {
@@ -40,15 +52,14 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/, // files to exclude
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader', 'eslint-loader'],
       },
       // CSS and SASS
       {
-        test: /\.(scss|css)$/,  // load files that end with scss and css
+        test: /\.css$/,  // load files that end with scss and css
         use: [
           'style-loader',
           'css-loader',
-          'sass-loader',
         ],
       }
     ]

@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin,
     new HtmlWebpackPlugin({
-      title: "Basic Webpack Setup",
+      title: "Crypto Currency Discovery",
       template: path.resolve(__dirname, './src/index.html'),
     })
   ],

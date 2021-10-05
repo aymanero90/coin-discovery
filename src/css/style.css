@@ -1,0 +1,97 @@
+table {
+  margin: 30px 0px;
+}
+
+label {
+  font-size: 20px;
+}
+
+label input[type="checkbox"] {
+display: none;
+}
+
+.nav_container{
+padding: 10px 40px;
+font-size: 20px;
+}
+
+.coins_table {   
+  color: black;
+  min-width: 1500px;
+  background-color: lightblue;
+  text-align: center;
+  
+}
+
+thead {
+  color: rgb(141, 65, 65);
+  font-size: large;
+  font-weight: bolder;
+  background-color: lightgrey;
+}
+
+.coins_table td, .coins_table th {
+  padding: 10px 20px;
+}
+
+.coins_table tbody tr {
+  border-bottom: black;
+}
+
+
+th {
+  text-align: center;
+}
+
+#fav_td {
+  padding-left: 37px;
+  padding-right: 37px;
+}
+
+.fav_star_label {
+position: absolute;
+cursor: pointer;
+}
+
+.fav_star_label .glyphicon {
+color: goldenrod;
+position: absolute;
+text-align: center;
+display: block;
+}
+
+.fav_star_label .glyphicon-star-empty {
+color: gray;
+}
+
+.fav_star_label .glyphicon-star {
+opacity: 0;
+transition: opacity 0.2s ease-in-out;
+}
+
+.fav_star_label:hover .glyphicon-star{
+opacity: 0.5;
+}
+
+.fav_star_label input[type="checkbox"]:checked ~ .glyphicon-star {
+opacity: 1;
+}
+
+.input_text {
+width: 300px;
+}
+
+#button_container {
+padding-top: 40px;
+}
+
+#fav_empty {
+text-align: center;
+padding-top: 60px;
+font-size: 35px;
+}
+
+#text_message{
+height: 200px;
+
+}
