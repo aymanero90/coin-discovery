@@ -1,3 +1,20 @@
+@media only screen and (max-width: 1200px) {
+  .response_5 { display: none; }  
+}
+
+@media only screen and (max-width: 985px) {
+  .response_4 { display: none; }    
+}
+
+@media only screen and (max-width: 760px) {
+  .response_6 { display: none; }
+  .response_7 { display: none; }
+}
+
+@media only screen and (max-width: 600px) {
+  .response_3  { display: none; }
+}
+
 body {
   background-color: rgb(214, 227, 245);
 }
@@ -31,6 +48,14 @@ thead {
   font-size: large;
   font-weight: bolder;
   background-color: lightgrey;
+}
+
+.response_0 {
+  text-align: center;
+}
+
+.response_1 {
+  text-align: center;
 }
 
 .coins_table td, .coins_table th {

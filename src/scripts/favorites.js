@@ -19,8 +19,7 @@ function createFavsTable(){
         xhr.onload = function (){
             if (this.status == 200){
                 var coinsData = JSON.parse(this.responseText).data;                
-                var filteredCoins = coinsData.filter(item => favorites.find(symbol => item.symbol === symbol));
-                console.log('filteredCoins', filteredCoins);     
+                var filteredCoins = coinsData.filter(item => favorites.find(symbol => item.symbol === symbol));   
                 var table = document.createElement("table");
                 table.className = "table table-striped table-bordered table-hover table-responsive";
                 var t_head = createTableHeader(FAV);
@@ -42,14 +41,10 @@ function createFavsTable(){
 
 
 
-export function coinIsInFavorites(coin){
-    
+export function coinIsInFavorites(coin){    
     var fav = localStorage.getItem(FAV_STORAGE);     
-    console.log('coinIsInFavorites_1 ' , typeof fav);
     if (fav){
-        console.log('coinIsInFavorites_fav', fav);
         fav = JSON.parse(fav);
-        console.log('coinIsInFavorites_fav');
         if (fav.find(item => item === coin))
           return true;    
 } 
@@ -71,10 +66,8 @@ function addToFav(coin){
     var favorites = localStorage.getItem(FAV_STORAGE);    
     if (!favorites){
         var coins = [];
-        console.log('stringify', JSON.stringify(coins));
         localStorage.setItem(FAV_STORAGE, JSON.stringify(coins));        
         favorites = JSON.parse(localStorage.getItem(FAV_STORAGE));
-        console.log('ttttttttttttt');
     }
     else {
         favorites = JSON.parse(favorites);
@@ -83,12 +76,10 @@ function addToFav(coin){
     if (!favorites.find(item => item === coin))
        favorites.push(coin);
     localStorage.setItem(FAV_STORAGE, JSON.stringify(favorites));
-    console.log('favCoins', favorites);
 }
 
 function removeFromFav(coin){ 
     var fav = JSON.parse(localStorage.getItem(FAV_STORAGE));    
     var filtered = fav.filter(item => item !== coin);
-    console.log('favCoins', filtered);
     localStorage.setItem(FAV_STORAGE, JSON.stringify(filtered));
 }
