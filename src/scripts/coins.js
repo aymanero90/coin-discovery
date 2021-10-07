@@ -1,7 +1,11 @@
+require('../css/style.css');
+
 import { COINS ,API_URL, createTableHeader, createTableBody} from "./common.js";
 
 document.getElementById('coins_button').addEventListener('click', () => {   
     console.log("coins_button_clicked");
+    
+   
     createCoinsTable();
 });
 
@@ -26,6 +30,3 @@ function createCoinsTable(){
     }   
     xhr.send();         
 }
-
-
-

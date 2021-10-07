@@ -30,9 +30,7 @@ function createFavsTable(){
                 coinsTable.appendChild(table);                  
             }
         }   
-        xhr.send();
-        
-        
+        xhr.send();  
 
     } else {
         var p = document.createElement('p');

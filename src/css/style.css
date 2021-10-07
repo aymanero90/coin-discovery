@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(214, 227, 245);
+}
+
 table {
   margin: 30px 0px;
 }
@@ -11,8 +15,7 @@ display: none;
 }
 
 .nav_container{
-padding: 10px 40px;
-font-size: 20px;
+background-color: #e3f2fd;
 }
 
 .coins_table {   
@@ -91,7 +94,11 @@ padding-top: 60px;
 font-size: 35px;
 }
 
-#text_message{
+.text_message {
 height: 200px;
+position: relative;
+}
 
+.text_message input{
+  padding-top: 5px;
 }

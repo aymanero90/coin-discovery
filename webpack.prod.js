@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'production',
@@ -11,8 +12,7 @@ module.exports = {
   entry: [
       path.resolve(__dirname, './src/scripts/coins.js'),
       path.resolve(__dirname, './src/scripts/common.js'),
-      path.resolve(__dirname, './src/scripts/favorites.js'),
-      path.resolve(__dirname, './src/scripts/style.js')
+      path.resolve(__dirname, './src/scripts/favorites.js')
   ],
   // 2
   // The bundles source code files shall result in a bundle.js file
@@ -33,7 +33,7 @@ module.exports = {
     new CleanWebpackPlugin,
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: path.resolve(__dirname, './src/index.html'),
+      template: path.resolve(__dirname, './src/html/index.html'),
     }),
     new HtmlWebpackPlugin({
       filename: "about.html",
@@ -44,7 +44,8 @@ module.exports = {
       filename: "contact.html",
       template: path.resolve(__dirname, './src/html/contact.html'),
       chunks: []
-    })
+    }),
+    new MiniCssExtractPlugin(),
   ],
   module: {
     // configuration regarding modules
@@ -52,15 +53,22 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/, // files to exclude
-        use: ['babel-loader', 'eslint-loader'],
+        use: ['babel-loader'],
       },
       // CSS and SASS
       {
         test: /\.css$/,  // load files that end with scss and css
         use: [
-          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           'css-loader',
         ],
+      },
+      // Images
+      {
+        test: /\.jpg$/,
+        use: ['file-loader'],
       }
     ]
   },
