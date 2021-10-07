@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css"></link>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    
     <title>Contact</title>
 </head>
 <body>
@@ -52,15 +51,15 @@
             <form>
               <div class="form-group">
                 <label for="exampleInputPassword1">Name</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Name">
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Name" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
               </div>
               <div class="form-group">
                 <label for="comment">Message:</label>
-                <textarea class="form-control" rows="5" id="comment" placeholder="Enter your message..."></textarea>
+                <textarea class="form-control" rows="5" id="comment" placeholder="Enter your message..." required></textarea>
               </div>
               <input type="submit" class="btn btn-primary"></input>
             </form>
@@ -77,5 +76,7 @@
         feedback.innerHTML="<br><br>Thank you for your message. <br>We will contact you as soon as possible ;)";
       });
         </script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>
