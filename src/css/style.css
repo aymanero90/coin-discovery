@@ -50,12 +50,26 @@ thead {
   background-color: lightgrey;
 }
 
+
+th {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}
+
+
 .response_0 {
   text-align: center;
 }
 
 .response_1 {
   text-align: center;
+}
+
+.response_8 {
+  width: 5%;
 }
 
 .coins_table td, .coins_table th {
@@ -66,19 +80,9 @@ thead {
   border-bottom: black;
 }
 
-
-th {
-  text-align: center;
-}
-
-#fav_td {
-  padding-left: 37px;
-  padding-right: 37px;
-}
-
 .fav_star_label {
-position: absolute;
-cursor: pointer;
+  position: absolute;
+  cursor: pointer;
 }
 
 .fav_star_label .glyphicon {
@@ -109,21 +113,30 @@ opacity: 1;
 width: 300px;
 }
 
+
+.text_message {
+  height: 200px;
+  position: relative;
+}
+  
+.text_message input{
+    padding-top: 5px;
+}
+
+.main_button{
+  margin: 4px 0px 4px 0px;
+}
+
 #button_container {
 padding-top: 40px;
+}
+
+#fav_td {
+  padding-right: 25px;
 }
 
 #fav_empty {
 text-align: center;
 padding-top: 60px;
 font-size: 35px;
-}
-
-.text_message {
-height: 200px;
-position: relative;
-}
-
-.text_message input{
-  padding-top: 5px;
 }
