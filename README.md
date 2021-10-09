@@ -12,4 +12,4 @@
 ## Techinques
 - The project has been implemented with npm and webpack with develop and production profiles
 - With CI/CD the project will be deloyed to Netlify with every push
-- Link to website on Netlify: [Coin Discovery](https://practical-lamarr-e37095.netlify.app)
+- Link to website on Netlify: <a href="https://practical-lamarr-e37095.netlify.app" target="_blank">Coin Discovery</a>
